@@ -1,5 +1,6 @@
 import random
 
+import logging
 
 throw_die = lambda : random.randint(1,6)
 
@@ -11,9 +12,7 @@ class Board:
         self.ladders = ladders
 
     def get_pos(self,x):
-        print(x,self.snakes)
         for i in self.snakes:
-            print(i)
             if i[0] == x:
                 print( "sliding down from",x, "to", i[1])
                 return i[1]
@@ -46,16 +45,10 @@ class Game:
         while not self.game_over():
             player = self.get_next_player()
             jump = throw_die()
+            a = self.player_pos[ player]
             pos = self.player_pos[ player ] + jump
             final_pos = self.board.get_pos(  pos)
+            print(a ," + ", jump, " = ", final_pos)
             self.player_pos[ player ] = final_pos
-            print( player,  " got " ,jump, "and is now at ", self.player_pos)
 
 
-players =   [1]
-snakes =    [ [10,4], [30,4], [40,2], [64,20] ]
-ladders =   [ [2,20], [3,30], [10,90], [5,30], [4,40] ]
-max = 100
-board = Board( snakes, ladders, max)
-game = Game( board, players)
-game.game_loop()
