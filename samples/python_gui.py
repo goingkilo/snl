@@ -22,7 +22,7 @@ class Player:
 def PressCallBack(Name):
         #tkinter.messagebox.showinfo("Please Study", Name)
         #La1=Label(top, text="Name").grid(row=4,column=4)
-        Fi=open("D:/1Data/Data/Personal/Python/copytext.txt","a")
+        Fi=open("./copytext.txt","a")
         Fi.write(Name + "\n")
         Fi.close()
 
@@ -48,11 +48,11 @@ def main():
     #filename=PhotoImage(file="D:/1Data/Data/Personal/Game-Board-Snakes-and-Ladders.gif")
     #Ca.create_image(0,0,image=filename)
 
-    SLfilename=PhotoImage(file="D:/1Data/Data/Personal/Game-Board-Snakes-and-Ladders.gif")
+    SLfilename=PhotoImage(file="../images/Game-Board-Snakes-and-Ladders.gif")
     SL=Label(top,image=SLfilename)
     SL.grid(row=3,column=1,rowspan=10,columnspan=10)
 
-    BMfilename=PhotoImage(file="D:/1Data/Data/Personal/blue-monster-icon.gif")
+    BMfilename=PhotoImage(file="../images/blue-monster-icon.gif")
     BM=Label(top,image=BMfilename)
     BM.place(x=700,y=40,in_=top)
     

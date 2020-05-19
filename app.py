@@ -44,13 +44,12 @@ class PlayFrame(Toplevel):
                 #self.overrideredirect(1)
 
                 CloseButton=Button(self, text="Close", command=lambda: self.CloseSubFrame(subFrame))
-                CloseButton.place(x=15,y=440,in_=self)
+                CloseButton.place( x = 15, y = 440, in_ = self)
                 CloseButton.configure(foreground="red")
 
-                #self.GameBoardSnakesAndLadders=PhotoImage(file="C:/D-Drive/1Data/Data/Personal/Game-Board-Snakes-and-Ladders.gif")
                 self.GameBoardSnakesAndLadders=PhotoImage(file="./images/Game-Board-Snakes-and-Ladders.gif")
                 self.DiePhotoImage=PhotoImage(file="./images/Die_1000_Single.gif")
-                self.DiePhotoImageList=list()
+                self.DiePhotoImageList=[]
                 for i in range(1,7):
                         ImageName="./images/Die_1000_Single_" + str(i) + ".gif"
                         PhotoImageReference=PhotoImage(file=ImageName)
@@ -64,9 +63,9 @@ class PlayFrame(Toplevel):
                 self.PlayerIconXPlacement=[155,155,155,155]
                 self.PlayerIconYPlacement=[370,370,370,370]
                 self.SnakeAndLadderPos=[38,0,0,14,0,0,0,0,31,0,0,0,0,0,0,0,7,0,0,0,42,0,0,0,0,0,0,84,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,67,0,0,34,0,0,0,0,0,0,0,19,0,60,0,0,0,0,0,0,91,0,0,0,0,0,0,0,0,100,0,0,0,0,0,0,24,0,0,0,0,0,73,0,75,0,0,79,0,0]
-                self.PlayerFinishXIncrement=0
-                self.PlayerFinishYIncrement=50
-                self.PlayerIconLabelList=list()
+                self.PlayerFinishXIncrement = 0
+                self.PlayerFinishYIncrement = 50
+                self.PlayerIconLabelList = []
                 self.SetPlayerBoard()
                 
 
@@ -172,7 +171,7 @@ class PlayFrame(Toplevel):
                                 
                 #GameBoardLabel.image="D:/1Data/Data/Personal/Game-Board-Snakes-and-Ladders.gif"
 
-        def RollDie(self,DieRollPlayerTurnLabel,DieStatusLabel):
+        def RollDie(self, DieRollPlayerTurnLabel, DieStatusLabel):
 
                 self.DieRollButton.config(state="disabled")
 
@@ -379,10 +378,10 @@ class SubFrame(Toplevel):
 
                 CloseButton.configure(foreground="red")
 
-                self.BlueMonsterIconFileName=PhotoImage(file="./blue-monster-icon.gif")
-                self.RedMonsterIconFileName=PhotoImage(file="./red-monster-icon.gif")
-                self.GreenMonsterIconFileName=PhotoImage(file="./green-monster-icon.gif")
-                self.YellowMonsterIconFileName=PhotoImage(file="./yellow-monster-icon.gif")
+                self.BlueMonsterIconFileName=PhotoImage(file="./images/blue-monster-icon.gif")
+                self.RedMonsterIconFileName=PhotoImage(file="./images/red-monster-icon.gif")
+                self.GreenMonsterIconFileName=PhotoImage(file="./images/green-monster-icon.gif")
+                self.YellowMonsterIconFileName=PhotoImage(file="./images/yellow-monster-icon.gif")
                 
                 self.PresentOptionsSubFrame()
 
@@ -635,7 +634,7 @@ class MainFrame:
                 self.mainFrame.twoPawnsFileName=PhotoImage(file="./images/2pawns.gif")
                 self.mainFrame.threePawnsFileName=PhotoImage(file="./images/3pawns.gif")
                 self.mainFrame.fourPawnsFileName=PhotoImage(file="./images/4pawns.gif")
-                
+
                 #NumPlayersEntry=Entry(self.mainFrame)
                 #NumPlayersEntry.grid(row=1,column=1)
                 
